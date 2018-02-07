@@ -1,5 +1,4 @@
 module RubyProgram
-
   def format_weight(list_of_objects)
     converted_list = convert_list_to_k(list_of_objects)
     # print_weight(converted_list)
@@ -16,9 +15,13 @@ module RubyProgram
 
     unless list.empty?
       list.map do |person|
+        name = person[:name]
+        weight = person[:weight][:amount]
+        weight /= KILO_CONVERSION if person[:weight][:unit] == 'l'
+
         people_weights_in_kilos << {
-          name: person[:name],
-          weight: (person[:weight] / KILO_CONVERSION)
+          name: name,
+          weight: weight
         }
       end
     end
@@ -33,11 +36,17 @@ include RubyProgram
 test_people = [
   {
     name: 'jon',
-    weight: 65
+    weight: {
+      unit: 'k',
+      amount: 65
+    }
   },
   {
     name: 'laksdjf',
-    weight: 342
+    weight: {
+      unit: 'l',
+      amount: 342
+    }
   }
 ]
 
