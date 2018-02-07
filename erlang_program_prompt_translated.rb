@@ -26,3 +26,20 @@ module RubyProgram
     people_weights_in_kilos
   end
 end
+
+# Tests
+include RubyProgram
+
+test_people = [
+  {
+    name: 'jon',
+    weight: 65
+  },
+  {
+    name: 'laksdjf',
+    weight: 342
+  }
+]
+
+puts RubyProgram.format_weight([])
+puts RubyProgram.format_weight(test_people)
