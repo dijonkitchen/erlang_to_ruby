@@ -17,8 +17,8 @@ module RubyProgram
     unless list.empty?
       list.map do |person|
         people_weights_in_kilos << {
-          name: person.name,
-          weight: person.weight / KILO_CONVERSION
+          name: person[:name],
+          weight: (person[:weight] / KILO_CONVERSION)
         }
       end
     end
