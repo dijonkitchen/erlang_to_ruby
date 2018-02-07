@@ -9,6 +9,20 @@ module RubyProgram
 
   private
 
+  KILO_CONVERSION = 0.45359237
+
   def convert_list_to_k(list)
+    people_weights_in_kilos = []
+
+    unless list.empty?
+      list.map do |person|
+        people_weights_in_kilos << {
+          name: person.name,
+          weight: person.weight / KILO_CONVERSION
+        }
+      end
+    end
+
+    people_weights_in_kilos
   end
 end
