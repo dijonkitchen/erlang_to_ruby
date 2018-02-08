@@ -21,7 +21,10 @@ module RubyProgram
 
         people_weights_in_kilos << {
           name: name,
-          weight: weight
+          weight: {
+            unit: 'k',
+            amount: weight
+          }
         }
       end
     end
