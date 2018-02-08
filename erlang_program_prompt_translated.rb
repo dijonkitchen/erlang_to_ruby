@@ -1,7 +1,7 @@
 module RubyProgram
   def format_weight(list_of_objects)
     converted_list = convert_list_to_k(list_of_objects)
-    # print_weight(converted_list)
+    print_weight(converted_list)
     # min_max = find_max_and_min(converted_list)
     # print_max_and_min(max_object, min_object)
   end
@@ -30,6 +30,12 @@ module RubyProgram
     end
 
     people_weights_in_kilos
+  end
+
+  def print_weight(names_and_kilos)
+    names_and_kilos.each do |obj|
+      puts "#{obj[:name].ljust(15)} #{obj[:weight][:amount]} c"
+    end
   end
 end
 
