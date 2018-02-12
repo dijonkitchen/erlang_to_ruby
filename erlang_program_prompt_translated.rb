@@ -11,23 +11,19 @@ module RubyProgram
   KILOGRAM_FACTOR = 0.45359237
 
   def convert_list_to_k(list)
-    unless list.empty?
-      return list.map do |person|
-        name = person[:name]
-        weight = person[:weight][:amount]
-        weight /= KILOGRAM_FACTOR if person[:weight][:unit] == 'l'
+    return list if list.empty?
+    list.map do |person|
+      weight = person[:weight][:amount]
+      weight /= KILOGRAM_FACTOR if person[:weight][:unit] == 'l'
 
-        {
-          name: name,
-          weight: {
-            unit: 'k',
-            amount: weight
-          }
+      {
+        name: person[:name],
+        weight: {
+          unit: 'k',
+          amount: weight
         }
-      end
+      }
     end
-
-    []
   end
 
   def print_weight(names_and_kilos)
