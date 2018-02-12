@@ -1,3 +1,6 @@
+# A Ruby translation of an Erlang program that formats
+# a list of people's names and weights in kilograms
+# along with the people with the maximum and minimum weights
 module RubyProgram
   def format_weight(list_of_objects)
     converted_list = convert_list_to_k(list_of_objects)
