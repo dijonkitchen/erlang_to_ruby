@@ -32,7 +32,7 @@ module RubyProgram
 
   def print_weight(names_and_kilos)
     names_and_kilos.each do |obj|
-      puts "#{obj[:name].ljust(15)} #{obj[:weight][:amount]} c"
+      puts "#{obj[:name].ljust(15)} #{obj[:weight][:amount]} kg"
     end
   end
 
@@ -51,8 +51,8 @@ module RubyProgram
 
   def print_max_and_min(max_min)
     return unless max_min.first && max_min.last
-    puts "Max weight was #{max_min.first[:weight][:amount]} c in #{max_min.first[:name]}"
-    puts "Min weight was #{max_min.last[:weight][:amount]} c in #{max_min.last[:name]}"
+    puts "Max weight was #{max_min.first[:weight][:amount]} kg in #{max_min.first[:name]}"
+    puts "Min weight was #{max_min.last[:weight][:amount]} kg in #{max_min.last[:name]}"
   end
 end
 
