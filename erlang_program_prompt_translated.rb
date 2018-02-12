@@ -61,21 +61,21 @@ include RubyProgram
 
 test_people = [
   {
-    name: 'jon',
+    name: 'Ender',
     weight: {
       unit: 'k',
       amount: 65
     }
   },
   {
-    name: 'laksdjf',
+    name: 'Peter',
     weight: {
       unit: 'l',
       amount: 342
     }
   },
   {
-    name: 'Carmen',
+    name: 'Valentine',
     weight: {
       unit: 'k',
       amount: 50
