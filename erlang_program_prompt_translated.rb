@@ -50,6 +50,7 @@ module RubyProgram
   end
 
   def print_max_and_min(max_min)
+    return unless max_min.first && max_min.last
     puts "Max weight was #{max_min.first[:weight][:amount]} c in #{max_min.first[:name]}"
     puts "Min weight was #{max_min.last[:weight][:amount]} c in #{max_min.last[:name]}"
   end
@@ -82,5 +83,5 @@ test_people = [
   }
 ]
 
-# puts RubyProgram.format_weight([])
+puts RubyProgram.format_weight([])
 puts RubyProgram.format_weight(test_people)
