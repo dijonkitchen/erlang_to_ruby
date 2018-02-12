@@ -8,14 +8,14 @@ module RubyProgram
 
   private
 
-  KILO_CONVERSION = 0.45359237
+  KILOGRAM_FACTOR = 0.45359237
 
   def convert_list_to_k(list)
     unless list.empty?
       return list.map do |person|
         name = person[:name]
         weight = person[:weight][:amount]
-        weight /= KILO_CONVERSION if person[:weight][:unit] == 'l'
+        weight /= KILOGRAM_FACTOR if person[:weight][:unit] == 'l'
 
         {
           name: name,
